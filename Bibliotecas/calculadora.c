@@ -1,4 +1,3 @@
-// Implementacao da funcao
 
 // Soma
 float soma(float a, float b);

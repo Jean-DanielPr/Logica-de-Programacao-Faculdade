@@ -1,4 +1,3 @@
-//Declaracao das funcoes
 
 // Soma
 float soma(float a, float b){
