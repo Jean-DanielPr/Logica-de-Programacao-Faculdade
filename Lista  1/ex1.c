@@ -8,7 +8,13 @@ int main() {
 	for(i=0;i<3;i++) {
 		printf("Digite a %i* nota: ", i+1);
 		scanf("%f", &n[i]);
-		med+=n[i];
+		if(n[i] <= 10 && n[i] >= 0) {
+			med += n[i];
+		} else {
+			printf("Nota invalida.\n");
+			printf("Tente novamente.\n");
+			i -= 1;
+		}
 	}
 	
 	med = med / 3;
@@ -16,11 +22,11 @@ int main() {
 	
 	if(med >= 7) {
 		printf("Situacao: APROVADO!");
-	} else if(med < 7 && med >= 5)  {
+	} else if(med >= 5)  {
 		printf("Situacao: RECUPERACAO!");
 	} else if(med < 5) {
 		printf("Situacao: REPROVADO!");
 	}
-	
+
 	return 0;
 }
