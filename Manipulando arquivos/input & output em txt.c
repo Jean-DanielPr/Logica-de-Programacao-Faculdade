@@ -13,7 +13,7 @@ int main() {
 	    }
 	    printf("Arquivo criado com sucesso.\n");
 	    printf("Pressione enter para continuar.\n");
-	    while (getchar() == "\n")
+	    while (getchar() != '\n');
 	    fclose(dados);
         }
 
@@ -41,11 +41,11 @@ int main() {
 
 	printf("Digite o Endereco do aluno a ser gravado: ");
 	fgets(informacoes, 100, stdin);
-	fprintf(dados, "Endereco: %s", informacoes);
+	fprintf(dados, "Endereco: %s\n", informacoes);
 	
-	printf("Dados gravados com sucesso.\n");
+	printf("\nDados gravados com sucesso.\n");
 	printf("Pressione enter para continuar.\n");
-	while(getchar() == "\n");
+	while(getchar() != '\n');
 	fclose (dados);
 
  //Lendo e imprimindo os dados do arquivo    
@@ -55,12 +55,12 @@ int main() {
 		exit(1);
 	}
 
-    int i = 0;
+    int letra = 0;
 
-    i = fgetc(dados);
+    letra = fgetc(dados);
     while(!feof(dados)) {
-        putchar(i);
-        i = fgetc(dados);
+        putchar(letra);
+        letra = fgetc(dados);
     }    
 
     fclose(dados);
