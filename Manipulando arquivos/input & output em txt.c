@@ -12,11 +12,12 @@ int main() {
 		    exit(1);
 	    }
 	    printf("Arquivo criado com sucesso.\n");
-	    printf("Pressione enter para continuar.");
+	    printf("Pressione enter para continuar.\n");
 	    while (getchar() == "\n")
 	    fclose(dados);
         }
 
+//Iniciando procedimento
     criar_arquivo();
  
 // Printando dados dentro do arquivo   
@@ -25,29 +26,29 @@ int main() {
 		printf("Erro ao abrir o arquivo.");
 		exit(1);
 	}
-	printf("Arquivo aberto e pronto para gravar suas informacoes.\n\n");
+	printf("Arquivo aberto e pronto para gravar suas informacoes.\n");
 	printf("Digite o nome do aluno a ser gravado: ");
 	fgets(informacoes, 100, stdin);
-	fprintf(dados, "%s", informacoes);
+	fprintf(dados, "Nome: %s", informacoes);
 
 	printf("Digite o RA do aluno a ser gravado: ");
 	fgets(informacoes, 100, stdin);
-	fprintf(dados, "%s", informacoes);
+	fprintf(dados, "RA: %s", informacoes);
 
 	printf("Digite o (DDD) e Telefone do aluno a ser gravado: ");
 	fgets(informacoes,100, stdin);
-	fprintf(dados, "%s", informacoes);
+	fprintf(dados, "Telefone: %s", informacoes);
 
 	printf("Digite o Endereco do aluno a ser gravado: ");
 	fgets(informacoes, 100, stdin);
-	fprintf(dados, "%s", informacoes);
+	fprintf(dados, "Endereco: %s", informacoes);
 	
 	printf("Dados gravados com sucesso.\n");
 	printf("Pressione enter para continuar.\n");
 	while(getchar() == "\n");
 	fclose (dados);
 
- //Lendo os dados do arquivo    
+ //Lendo e imprimindo os dados do arquivo    
     dados = fopen("dados.txt", "r");
 	if(dados == NULL) {
 		printf("Erro ao abrir o arquivo.");
@@ -57,10 +58,7 @@ int main() {
     int i = 0;
 
     i = fgetc(dados);
-    
-    printf("Nome do aluno: ");
     while(!feof(dados)) {
-
         putchar(i);
         i = fgetc(dados);
     }    
