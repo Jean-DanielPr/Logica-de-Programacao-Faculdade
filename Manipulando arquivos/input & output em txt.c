@@ -1,23 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+// Procedimento para criar o arquivo dados.txt    
+void criar_arquivo() {
+	FILE *arquivo_temp = fopen("dados.txt", "w");
+    arquivo_temp = fopen("dados.txt", "w");
+	if(arquivo_temp == NULL) {
+		printf("Erro ao abrir o arquivo.");
+		exit(1);
+	}
+	printf("Arquivo criado com sucesso.\n");
+	printf("Pressione enter para continuar.\n");
+	while (getchar() != '\n');
+	fclose(arquivo_temp);
+    }
 
 int main() {
 	FILE *dados;
 	char informacoes[100];
 
-// Procedimento para criar o arquivo dados.txt    
-    void criar_arquivo() {
-        dados = fopen("dados.txt", "w");
-	    if(dados == NULL) {
-		    printf("Erro ao abrir o arquivo.");
-		    exit(1);
-	    }
-	    printf("Arquivo criado com sucesso.\n");
-	    printf("Pressione enter para continuar.\n");
-	    while (getchar() != '\n');
-	    fclose(dados);
-        }
-
-//Iniciando procedimento
+// Chamando procedimento
     criar_arquivo();
  
 // Printando dados dentro do arquivo   
