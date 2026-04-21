@@ -1,7 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void leMatriz(int mtx[4][4]) ;
+void imprimeMatriz(int mtx[4][4]);
+int calculaTraco(int mtx[4][4]);
+int somaAcimaDiagonal(int mtx[4][4]);
+
+int main(){
+
+	int m[4][4];
+	leMatriz(m);
+	imprimeMatriz(m);
+	printf("A soma do traco e = %i.\n", calculaTraco(m));
+	printf("A soma dos numeros acima do traco e = %i.\n", somaAcimaDiagonal(m));
+	return 0;
+	
+}
+
 void leMatriz(int mtx[4][4]) {
+	
 	int i=0, j=0;
 	printf("Lendo sua matriz 4x4");
 	printf("\n");
@@ -15,6 +32,7 @@ void leMatriz(int mtx[4][4]) {
 }
 
 void imprimeMatriz(int mtx[4][4]) {
+
 	int i=0, j=0;
 	printf("Imprimindo matriz... \n");
 	for(i=0;i<4;i++) {
@@ -27,7 +45,8 @@ void imprimeMatriz(int mtx[4][4]) {
 }
 
 int calculaTraco(int mtx[4][4]) {
-	int i=0, j=0, somatracofuncao;
+
+	int i=0, j=0, somatracofuncao = 0;
 	printf("Imprimindo traco... \n");
 	for(i=0;i<4;i++) {
 		for(j=0;j<4;j++){
@@ -45,7 +64,8 @@ int calculaTraco(int mtx[4][4]) {
 }
 
 int somaAcimaDiagonal(int mtx[4][4]) {
-	int i=0, j=0, somaAcimaFuncao;
+
+	int i=0, j=0, somaAcimaFuncao = 0;
 	for(i=0;i<4;i++) {
 		for(j=0;j<4;j++){
 			if(j>i) {
@@ -54,13 +74,4 @@ int somaAcimaDiagonal(int mtx[4][4]) {
 		}
 	}
 	return somaAcimaFuncao;
-}
-int main(){
-	int m[4][4];
-	leMatriz(m);
-	imprimeMatriz(m);
-	printf("A soma do traco e = %i.\n", calculaTraco(m));
-	printf("A soma dos numeros acima do traco e = %i.\n", somaAcimaDiagonal(m));
-	return 0;
-	
 }
